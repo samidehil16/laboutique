@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous Contacter-LaBoutique Officiel!{% endblock %}
+
+{% block content %}
+<h2> Nous Contacter</h2>
+<p>N'hésiter pas a prendre contact avec notre équipe , nous 
+vous répondrons dans les meilleurs délais</p>
+
+{% for message in app.flashes('notice') %}
+            <div class="alert alert-info"> {{message}}
+            </div>
+{% endfor %}
+
+<div class="row mt-3">
+    <div class="col-md-8"> 
+        {{form(form)}}
+    </div>
+    <div class="col-md-4">
+        <strong>LaBoutiqueOfficiel </strong>
+        <hr>
+        <br/>
+        07 81 72 06 59<br/>
+        3 rue ampere, 91000 Evry. <br/>
+        contact@laboutiqueofficiel.com
+        
+     </div>
+</div>
+{% endblock %}

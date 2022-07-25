@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de commande - LaBoutique!{% endblock %}
+
+{% block content %}
+    <h2> Confirmation de la commande </h2>
+    <p>  Bonjour <strong> {{ order.user.firstname }} {{ order.user.lastname }} </strong>
+    </p>
+    Nous vous remercions pour votre commande <strong> {{order.reference}} </strong> <br/>
+    Une confirmation vient de vous envoyée par mail à l'adresse <strong> {{order.user.email}} </strong>
+    <hr>
+    Votre commande sera livrée par <strong> {{order.carrierName}} </strong> a l'adresse suivante : <br/>
+    {{order.delivery|raw}}
+
+    <hr>
+    Pour suivre votre commande , rendez-vous dans votre <a href="{{path('account_order')}}"> compte </a> .
+{% endblock %}

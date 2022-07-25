@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block content %}
+
+<h1>Mon compte</h1>
+
+<h5> Bienvenue {{app.user.firstname}} , Tu peux consulter toutes les informations concernant ton profil ici</h5>
+<hr>
+
+
+<div class="row">
+    {% if app.user.roles[0] == "ROLE_ADMIN" %}
+    <div class="col-md-4">
+        <div class="account-item"> 
+            - <a href="{{path('admin')}}"> Accéder au BackOffice</a> 
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="col-md-4"> 
+         <div class="account-item"> 
+            - <a href="{{path('account_password')}}"> Modifier mon Mot de Passe </a> 
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="account-item"> 
+            - <a href="{{path('account_adress')}}">Mes adresses </a>
+        </div>
+     </div>
+    <div class="col-md-4">
+        <div class="account-item"> 
+            - <a href="{{path('account_order')}}">Mes commandes </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
