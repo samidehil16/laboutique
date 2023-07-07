@@ -50,6 +50,8 @@ class RegisterController extends AbstractController
 
                 $notification="Votre Inscription c'est correctement dérouler.Vous pouvez
                 des a présent vous connecter a votre compte  ";
+
+                
             }else{
 
                 $notification=" L'email que vous avez renseigné existe déja.";
