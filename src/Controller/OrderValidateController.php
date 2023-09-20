@@ -38,8 +38,8 @@ class OrderValidateController extends AbstractController
             $this->entityManager->flush();
 
             $content = "Bonjour".$order->getUser()->getFirstname()."<br/> Merci pour votre commande" ;
-                $mail = new Mail();
-                $mail->send($order->getUser()->getEmail(),$order->getUser()->getFirstname(),'Votre commande LaBoutique est bien valide',$content);
+            $mail = new Mail();
+            $mail->send($order->getUser()->getEmail(),$order->getUser()->getFirstname(),'Votre commande LaBoutique est bien valide',$content);
 
         }
         return $this->render('order_validate/index.html.twig', [
